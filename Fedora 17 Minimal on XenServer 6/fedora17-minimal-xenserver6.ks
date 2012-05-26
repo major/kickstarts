@@ -54,7 +54,7 @@ yum-updatesd
 
 # Add in an old-style grub.conf to make XenServer's pygrub happy
 %post
-KERNELSTRING=`rpm -q kernel --queryformat='%{VERSION}-%{RELEASE}.%{ARCH}' | tail -n 1`
+KERNELSTRING=`rpm -q kernel --queryformat='%{VERSION}-%{RELEASE}.%{ARCH}\n' | tail -n 1`
 
 cat > /boot/grub/grub.conf <<EOF
 default=0
