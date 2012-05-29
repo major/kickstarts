@@ -2,7 +2,7 @@
 install
 
 # Install from a friendly mirror and add updates
-url --url=http://mirror.rackspace.com/fedora/development/17/x86_64/os/
+url --url=http://fedora.mirror.lstn.net/releases/17/Fedora/x86_64/os/
 repo --name=updates
 
 # Language and keyboard setup
@@ -45,16 +45,14 @@ reboot
 %packages --excludedocs
 man
 man-pages
-postfix
 sendmail
-yum-plugin-fastestmirror
 yum-presto
 yum-updatesd
 %end
 
 # Add in an old-style grub.conf to make XenServer's pygrub happy
 %post
-KERNELSTRING=`rpm -q kernel --queryformat='%{VERSION}-%{RELEASE}.%{ARCH}\n' | tail -n 1`
+KERNELSTRING=`rpm -q kernel --queryformat='%{VERSION}-%{RELEASE}.%{ARCH}' | tail -n 1`
 
 cat > /boot/grub/grub.conf <<EOF
 default=0
@@ -68,6 +66,4 @@ EOF
 ln -s /boot/grub/grub.conf /boot/grub/menu.lst
 ln -s /boot/grub/grub.conf /etc/grub.conf
 
-# Who uses sendmail these days?
-/usr/sbin/alternatives --set mta /usr/sbin/sendmail.postfix
 %end
