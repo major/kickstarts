@@ -38,8 +38,8 @@ part / --fstype=ext4 --grow --size=1024 --asprimary
 part swap --size=512
 bootloader --location=none --timeout=5 --driveorder=xvda
 
-# Reboot when the kickstart is done
-reboot
+# Shutdown when the kickstart is done
+halt
 
 # Minimal package set
 %packages --excludedocs
