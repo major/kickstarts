@@ -23,7 +23,7 @@ When you're ready to use this kickstart file, open XenCenter and follow these st
   *  http://mirror.rackspace.com/fedora/releases/16/Everything/x86_64/os/  
 *  Press Next  
 *  Paste into "Advanced OS boot parameters":  
-  *  console=hvc0 serial ip=dhcp nogpt ks=http://rkrh.kr/2th  
+  *  console=hvc0 serial ip=dhcp nogpt ks=<URL to kickstart file>  
 *  Press Next  
 *  Choose the XenServer node for the VM and press Next  
 *  Choose any number of vCPU's but ensure memory is >= 2048MB, press Next  
