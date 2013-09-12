@@ -2,7 +2,7 @@
 install
 
 # Install from a friendly mirror and add updates
-url --url=http://mirror.rackspace.com/fedora/releases/16/Everything/x86_64/os/
+url --url=http://mirror.rackspace.com/fedora/releases/19/Everything/x86_64/os/
 repo --name=updates
 
 # Language and keyboard setup
